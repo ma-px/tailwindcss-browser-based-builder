@@ -127,3 +127,29 @@ export function watchDOMChanges(callback, options = {}) {
     };
 }
 
+export function capture() {
+    // Use the current page URL as the storage key
+    const storeKey = window.location.href
+
+    // Retrieve previously stored classes for this URL
+    localForage.getItem(storeKey).then((tagsToClasses) => {
+        // Get all tags and their classes from the current page
+        const currentTagsWidthClasses = getTagsWithClasses()
+
+        // Merge current classes with previously stored ones
+        const mergedTagsWidthClasses = mergeTagsWithClasses(currentTagsWidthClasses, tagsToClasses)
+
+        // Save the merged result back to storage
+        localForage.setItem(storeKey, mergedTagsWidthClasses)
+
+        console.log(mergedTagsWidthClasses)
+    })
+}
+
+export function keepCapturing() {
+    const watcher = watchDOMChanges((changes) => {
+        capture()
+    });
+
+    return watcher
+}
