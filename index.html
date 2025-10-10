@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Package Dev Test</title>
+</head>
+<body>
+  <h1>Testing My Package</h1>
+  <div id="output"></div>
+  
+  <script type="module">
+    
+    import { greet, add } from './src/index.js';
+    
+    const output = document.getElementById('output');
+    output.innerHTML = `
+      <p>${greet('World')}</p>
+      <p>2 + 3 = ${add(2, 3)}</p>
+    `;
+  </script>
+</body>
+</html>

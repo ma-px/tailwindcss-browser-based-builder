@@ -1,0 +1,27 @@
+{
+  "name": "tailwindcss-browser-based-compiler",
+  "version": "1.0.0",
+  "main": "./dist/tailwindcss-browser-based-compiler.umd.js",
+  "module": "./dist/tailwindcss-browser-based-compiler.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/tailwindcss-browser-based-compiler.es.js",
+      "require": "./dist/tailwindcss-browser-based-compiler.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "vite": "^7.1.9"
+  }
+}
