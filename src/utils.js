@@ -60,7 +60,32 @@ function arraysEqual(arr1, arr2) {
   return sorted1.every((value, index) => value === sorted2[index]);
 }
 
-export function getCss()  {
+export function createElementsForClasses(classesArray) {
+    // Create container element
+    const container = document.createElement('div');
+    container.style.display = 'none';
+    
+    // Create elements from the array
+    classesArray.forEach(item => {
+        // Create element with the tag name
+        const element = document.createElement(item.tag);
+        
+        // Add classes to the element
+        if (item.classes && item.classes.length > 0) {
+            element.classList.add(...item.classes);
+        }
+        
+        // Append element to container
+        container.appendChild(element);
+    });
+    
+    // Add container to body
+    document.body.appendChild(container);
+    
+    return container;
+}
+
+export function getCss() {
   const styleElements = Array.from(document.head.querySelectorAll('style'));
   
   // First priority: Check for tailwindcss.com in comments
