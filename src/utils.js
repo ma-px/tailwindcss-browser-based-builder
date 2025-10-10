@@ -27,3 +27,33 @@ export function getTagsWithClasses() {
   
   return result;
 }
+
+export function mergeTagsWithClasses(firstArray, secondArray) {
+  const result = [...firstArray]; // Start with a copy of the first array
+  
+  for (let secondItem of secondArray) {
+    // Check if this tag-classes combination exists in the first array
+    const exists = firstArray.some(firstItem => 
+      firstItem.tag === secondItem.tag &&
+      arraysEqual(firstItem.classes, secondItem.classes)
+    );
+    
+    // If it doesn't exist, add it to the result
+    if (!exists) {
+      result.push(secondItem);
+    }
+  }
+  
+  return result;
+}
+
+// Helper function to compare two arrays
+function arraysEqual(arr1, arr2) {
+  if (arr1.length !== arr2.length) return false;
+  
+  // Sort both arrays to compare regardless of order
+  const sorted1 = [...arr1].sort();
+  const sorted2 = [...arr2].sort();
+  
+  return sorted1.every((value, index) => value === sorted2[index]);
+}
