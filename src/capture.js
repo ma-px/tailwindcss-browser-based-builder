@@ -141,8 +141,6 @@ export function capture() {
 
         // Save the merged result back to storage
         localForage.setItem(storeKey, mergedTagsWidthClasses)
-
-        console.log(mergedTagsWidthClasses)
     })
 }
 
@@ -152,4 +150,10 @@ export function keepCapturing() {
     });
 
     return watcher
+}
+
+export function getCapturedClasses() {
+    return localForage.getItem(window.location.href).then(function (classes) {
+        return classes
+    })
 }
