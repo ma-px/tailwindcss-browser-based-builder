@@ -1,3 +1,5 @@
+import { minify } from 'csso'
+
 export function getTagsWithClasses() {
   const result = [];
   
@@ -74,4 +76,8 @@ export function getCss()  {
   }
   
   return tailwindStyle ? tailwindStyle.textContent : ''
+}
+
+export function getMinifiedCss() {
+    return minify(getCss());
 }
