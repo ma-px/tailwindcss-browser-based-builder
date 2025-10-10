@@ -30,6 +30,7 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
+    "clean-css": "^5.3.3",
     "localforage": "^1.10.0"
   }
 }
