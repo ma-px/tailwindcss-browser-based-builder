@@ -57,3 +57,21 @@ function arraysEqual(arr1, arr2) {
   
   return sorted1.every((value, index) => value === sorted2[index]);
 }
+
+export function getCss()  {
+  const styleElements = Array.from(document.head.querySelectorAll('style'));
+  
+  // First priority: Check for tailwindcss.com in comments
+  let tailwindStyle = styleElements.find(style => 
+    /\/\*.*tailwindcss\.com.*\*\//s.test(style.textContent)
+  );
+  
+  // Second priority: Check for 'tailwindcss' in comments
+  if (!tailwindStyle) {
+    tailwindStyle = styleElements.find(style => 
+      /\/\*.*tailwindcss.*\*\//s.test(style.textContent)
+    );
+  }
+  
+  return tailwindStyle ? tailwindStyle.textContent : ''
+}
