@@ -50,7 +50,7 @@ export function mergeTagsWithClasses(firstArray, secondArray) {
 }
 
 // Helper function to compare two arrays
-function arraysEqual(arr1, arr2) {
+export function arraysEqual(arr1, arr2) {
     if (arr1.length !== arr2.length) return false;
 
     // Sort both arrays to compare regardless of order
