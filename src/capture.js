@@ -108,6 +108,7 @@ export function watchDOMChanges(callback, options = {}) {
     // Return object with disconnect method
     return {
         disconnect: () => {
+            localForage.setItem('capture', false)
             clearTimeout(debounceTimeout);
             observer.disconnect();
         },
@@ -148,10 +149,13 @@ export function capture() {
     })
 }
 
-export function keepCapturing() {
+export function startCapturing() {
+    localForage.setItem('capture', true)
     const watcher = watchDOMChanges((changes) => {
         capture()
     });
+
+    capture()
 
     return watcher
 }
