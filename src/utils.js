@@ -114,3 +114,17 @@ export function getTimeoutLength(elementsToCreate) {
     return timeout
 }
 
+export function copyTextToClipboard(text, copyBtn, originalText) {
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            copyBtn.textContent = 'Copied!'
+            setTimeout(() => {
+                copyBtn.textContent = originalText
+            }, 2000)
+        })
+        .catch(err => {
+            console.error("Failed to copy text: ", err);
+        });
+}
+
+
