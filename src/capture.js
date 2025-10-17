@@ -133,6 +133,10 @@ export function capture() {
 
     // Retrieve previously stored classes for this URL
     localForage.getItem(storeKey).then((tagsToClasses) => {
+        if(tagsToClasses == null) {
+            tagsToClasses = []
+        }
+
         // Get all tags and their classes from the current page
         const currentTagsWidthClasses = getTagsWithClasses()
 
