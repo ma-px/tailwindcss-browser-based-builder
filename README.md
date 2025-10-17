@@ -20,7 +20,7 @@ A **browser-based build tool for Tailwind CSS** that lets you generate your Tail
 
     ```html
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <script src="tailwind-builder.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss-browser-based-builder@latest/dist/tailwindcss-browser-based-builder.js" defer></script>
     ```
 
 2. **Capture Tailwind classes**
