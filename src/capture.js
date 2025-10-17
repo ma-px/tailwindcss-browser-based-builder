@@ -163,10 +163,12 @@ export function startCapturing() {
 export function getCapturedClasses() {
     return localForage.keys().then(function (keys) {
         // Create an array of promises for all getItem calls
-        const promises = keys.map(function (urlKey) {
+        const promises = keys.filter(function(key) {
+            return key.startsWith('http')
+        }).map(function (urlKey) {
             return localForage.getItem(urlKey);
         });
-        
+
         // Wait for all promises to resolve
         return Promise.all(promises).then(function (allClassesArrays) {
             // Flatten the array of arrays into a single array
