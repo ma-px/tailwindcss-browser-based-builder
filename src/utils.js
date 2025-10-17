@@ -106,3 +106,11 @@ export function getCss() {
 export function getMinifiedCss() {
     return minify(getCss()).css;
 }
+
+export function getTimeoutLength(elementsToCreate) {
+    let timeout = 10 * parseInt(elementsToCreate.length)
+    timeout = timeout < 1000 ? 1000 : timeout
+    timeout = timeout > 2000 ? 2000 : timeout
+    return timeout
+}
+
