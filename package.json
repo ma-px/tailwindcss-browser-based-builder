@@ -10,7 +10,9 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "images",
+    "README.md"
   ],
   "scripts": {
     "dev": "vite",
@@ -21,9 +23,9 @@
     "test:run": "vitest run"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "Ma Px",
+  "license": "MIT",
+  "description": "A browser-based build tool for tailwindcss.",
   "devDependencies": {
     "jsdom": "^27.0.0",
     "vite": "^7.1.9",
