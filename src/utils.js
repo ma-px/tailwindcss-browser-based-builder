@@ -127,4 +127,65 @@ export function copyTextToClipboard(text, copyBtn, originalText) {
         });
 }
 
+export function injectBuilderUI() {
+    const style = document.createElement("style");
+    style.textContent = `
+    #-css-builder {
+      box-sizing: border-box;
+      z-index: 10000000000000000000000000000000000000000000;
+      position: absolute;
+      border: 2px solid #a8c7fa !important;
+      border-radius: 5px !important;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      min-width: 300px;
+      height: 182px;
+      left: 1em;
+      bottom: 1em;
+      user-select: none;
+      cursor: grab;
+      background: white;
+    }
 
+    .-builder-btn {
+      box-sizing: border-box;
+      font-size: 0.8rem;
+      margin: 0.2em 0;
+      padding: 0.5em 0.7em;
+      border-radius: 5px;
+      background-color: #d3e3fd;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .-builder-btn:hover {
+      background-color: #a8c7fa;
+    }
+
+    .-builder-btn:active {
+      background-color: #87b1f7;
+    }
+  `;
+    document.head.appendChild(style);
+
+    const builder = document.createElement("div");
+    builder.id = "-css-builder";
+
+    const buttons = [
+        { id: "--capture", label: "Start Capturing" },
+        { id: "--stop-capture", label: "Stop Capturing" },
+        { id: "--copy-css", label: "Copy CSS" },
+        { id: "--copy-minified-css", label: "Copy Minified CSS" }
+    ];
+
+    for (const { id, label } of buttons) {
+        const btn = document.createElement("button");
+        btn.className = "-builder-btn";
+        btn.id = id;
+        btn.textContent = label;
+        builder.appendChild(btn);
+    }
+
+    document.body.appendChild(builder);
+}
