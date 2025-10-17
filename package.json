@@ -1,12 +1,12 @@
 {
-  "name": "tailwindcss-browser-based-compiler",
+  "name": "tailwindcss-browser-based-builder",
   "version": "1.0.0",
-  "main": "./dist/tailwindcss-browser-based-compiler.umd.js",
-  "module": "./dist/tailwindcss-browser-based-compiler.es.js",
+  "main": "./dist/tailwindcss-browser-based-builder.umd.js",
+  "module": "./dist/tailwindcss-browser-based-builder.es.js",
   "exports": {
     ".": {
-      "import": "./dist/tailwindcss-browser-based-compiler.es.js",
-      "require": "./dist/tailwindcss-browser-based-compiler.umd.js"
+      "import": "./dist/tailwindcss-browser-based-builder.es.js",
+      "require": "./dist/tailwindcss-browser-based-builder.umd.js"
     }
   },
   "files": [

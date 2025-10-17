@@ -5,8 +5,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.js'),
-      name: 'tailwindcss-browser-based-compiler',
-      fileName: (format) => `tailwindcss-browser-based-compiler.${format}.js`,
+      name: 'tailwindcss-browser-based-builder',
+      fileName: (format) => `tailwindcss-browser-based-builder.${format}.js`,
       formats: ['es', 'umd']
     },
     rollupOptions: {
