@@ -27,7 +27,7 @@ A **browser-based build tool for Tailwind CSS** that lets you generate your Tail
    Once the scripts are added, start the capture process.
 
    <p align="center">
-    <img src="./images/screenshot-1.png" alt="Tailwind Builder UI" width="600">
+    <img src="https://raw.githubusercontent.com/ma-px/tailwindcss-browser-based-builder/refs/heads/main/images/screenshot-1.png" alt="Tailwind Builder UI" width="600">
    </p>
   
    Visit each page that should contribute its Tailwind classes to the final stylesheet.
@@ -35,7 +35,7 @@ A **browser-based build tool for Tailwind CSS** that lets you generate your Tail
 3. **Export the CSS**
    When you’re done capturing, click **Copy CSS** or **Copy Minified CSS** to copy the compiled Tailwind output.
    <p align="center">
-    <img src="./images/screenshot-2.png" alt="Tailwind Builder UI" width="600">
+    <img src="https://raw.githubusercontent.com/ma-px/tailwindcss-browser-based-builder/refs/heads/main/images/screenshot-2.png" alt="Tailwind Builder UI" width="600">
    </p>
 
 ---
