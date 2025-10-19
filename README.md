@@ -1,6 +1,6 @@
 # tailwindcss-browser-based-builder
 
-A **browser-based build tool for Tailwind CSS** that lets you generate your Tailwind CSS output **directly in the browser** — no Node.js or build setup required.
+A **browser-based build tool for Tailwind CSS** that lets you generate your Tailwind CSS output **directly in the browser**, no Node.js or build setup required.
 
 ---
 
