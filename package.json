@@ -44,5 +44,9 @@
   "dependencies": {
     "csso": "^5.0.5",
     "localforage": "^1.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ma-px/tailwindcss-browser-based-builder"
   }
 }
