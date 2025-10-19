@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-browser-based-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/tailwindcss-browser-based-builder.umd.js",
   "module": "./dist/tailwindcss-browser-based-builder.es.js",
   "exports": {
